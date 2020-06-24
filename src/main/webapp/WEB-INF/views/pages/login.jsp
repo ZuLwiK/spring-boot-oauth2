@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="<c:url value='/webjars/bootstrap/css/bootstrap.min.css' />" />
+<link rel="stylesheet" href="<c:url value='/webjars/bootstrap/4.1.1/css/bootstrap.min.css' />" />
 <link rel="stylesheet" href="<c:url value='/static/css/style.css' />" />
-<title>Demo</title>
+<title>Lambda</title>
 </head>
 <body>
 	<section>
@@ -19,7 +19,7 @@
 									<c:if test="${not empty msg}">
 										<div class="alert alert-${css} alert-dismissible" role="alert">
 											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-												<span aria-hidden="true">×</span>
+												<span aria-hidden="true">Ã—</span>
 											</button>
 											<strong>${msg}</strong>
 										</div>
