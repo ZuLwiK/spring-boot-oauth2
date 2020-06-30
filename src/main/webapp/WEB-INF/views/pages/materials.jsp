@@ -18,15 +18,16 @@
     <div class="col-md-7 col-md-6 col-sm-offset-3">
         <table class="table table-bordered">
             <tr>
-                <th colspan="10">Materials</th>
+                <th colspan="11">Materials</th>
                 <th><a href='/materials/add'>
-                    <button value="add article">ADD</button>
+                    <button value="add material">ADD</button>
                 </a>
                 </th>
             </tr>
             <tr>
+                <td rowspan="2">No</td>
                 <td rowspan="2">Name</td>
-                <td rowspan="2">Max temp</td>
+                <td rowspan="2">Max temp [&#8451;]</td>
                 <td colspan="9">Conductivity</td>
             </tr>
             <tr>
@@ -40,8 +41,9 @@
                 <td>@1600</td>
                 <td>@1800</td>
             </tr>
-            <c:forEach items="${materials}" var="material">
+            <c:forEach items="${materials}" var="material" varStatus="loop">
                 <tr>
+                    <td>${loop.index +1}</td>
                     <td><c:out value="${material.name}"/></td>
                     <td><c:out value="${material.maxTemp}"/></td>
                     <td><c:out value="${material.conductivity0200}"/></td>
@@ -65,22 +67,22 @@
                 </tr>
             </c:forEach>
             <tr>
-                <td colspan="11"></td>
+                <td colspan="14"></td>
             </tr>
             <tr>
-                <td colspan="11">Go to:</td>
+                <td colspan="14">Go to:</td>
             </tr>
             <tr>
-                <td colspan="11"><a href="/home"> HomePage </a></td>
+                <td colspan="14"><a href="/home"> HomePage </a></td>
             </tr>
             <tr>
-                <td colspan="11"><a href="/objects/all"> Objects </a></td>
+                <td colspan="14"><a href="/facilities/all"> Facilities </a></td>
             </tr>
             <tr>
-                <td colspan="11"><a href="/calculations"> Calculations </a></td>
+                <td colspan="14"><a href="/calculations"> Calculations </a></td>
             </tr>
             <tr>
-                <td colspan="11"><a href="/about"> About author </a></td>
+                <td colspan="14"><a href="/about"> About author </a></td>
             </tr>
         </table>
         <%--  <tr><spring:message code="app.footer"/></tr>--%>

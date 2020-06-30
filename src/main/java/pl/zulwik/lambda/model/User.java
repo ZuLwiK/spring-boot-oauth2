@@ -9,7 +9,6 @@ import java.util.Set;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Cascade;
 
 /**
  * The persistent class for the user database table.
@@ -57,8 +56,12 @@ public class User implements Serializable {
 	private Set<Role> roles;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Material>materialsList = new ArrayList<>();
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private List<Facility> facilityList = new ArrayList<>();
 
 	@Override
 	public String toString() {
@@ -79,6 +82,22 @@ public class User implements Serializable {
 
 	public User() {
 		this.enabled = false;
+	}
+
+	public List<Material> getMaterialsList() {
+		return materialsList;
+	}
+
+	public void setMaterialsList(List<Material> materialsList) {
+		this.materialsList = materialsList;
+	}
+
+	public List<Facility> getFacilityList() {
+		return facilityList;
+	}
+
+	public void setFacilityList(List<Facility> facilityList) {
+		this.facilityList = facilityList;
 	}
 
 	public Long getId() {

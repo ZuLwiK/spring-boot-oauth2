@@ -31,7 +31,7 @@ public class MaterialController {
             material.setName("name" + i);
             material.setUser(userRepository.findByEmail(principal.getName()));
             material.setMaxTemp(1800);
-            material.setConductivity0200(1);
+            material.setConductivity0200(0.3);
             materialRepository.save(material);
         }
         List<Material> material = materialRepository.customFindByUser(userRepository.findByEmail(principal.getName()));
@@ -62,7 +62,6 @@ public class MaterialController {
     }
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
     public String delete(@ModelAttribute Material material) {
-//        articleDao.deleteArticle(article);
         materialRepository.delete(material);
         return "redirect:/materials/all";
     }

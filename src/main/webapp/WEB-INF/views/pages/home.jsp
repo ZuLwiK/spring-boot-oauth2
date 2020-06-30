@@ -34,7 +34,7 @@
 					<td colspan="4"><a href="/materials/all"> Material List </a></td>
 				</tr>
 				<tr>
-					<td colspan="4"><a href="/objects/all"> Objects </a></td>
+					<td colspan="4"><a href="/facilities/all"> Facilities </a></td>
 				</tr>
 				<tr>
 					<td colspan="4"><a href="/calculations"> Calculations </a></td>
