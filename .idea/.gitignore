@@ -1,0 +1,30 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+.properties
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.xml
+#SonarLint
+/sonarlint/
+#Libraries
+/libraries/
+/inspectionProfiles/
+/checkstyleidea.tmp/
+/checkstyleidea-libs/
+/stara idea/

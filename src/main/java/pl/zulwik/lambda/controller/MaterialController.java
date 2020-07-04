@@ -39,8 +39,7 @@ public class MaterialController {
         return "materials";
     }
     @GetMapping("/all")
-    public String getAllMaterials(Model model, Principal principal) throws Exception {
-//        List<Material> material = materialRepository.findAll();
+    public String getAllMaterials(Model model, Principal principal) {
         List<Material> material = materialRepository.customFindByUser(userRepository.findByEmail(principal.getName()));
         model.addAttribute("materials", material);
         return "materials";

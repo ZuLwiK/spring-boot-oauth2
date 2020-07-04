@@ -10,6 +10,6 @@ import pl.zulwik.lambda.model.User;
 import java.util.List;
 
 public interface LayerRepository extends JpaRepository<Layer,Long> {
-/*    @Query("SELECT l FROM Layer l where user.id= ?1")
-    List<Layer> customFindByUser(User user);*/
+    @Query("SELECT l FROM Layer l where l.facility.id= ?1")
+    List<Layer> customFindByFacility(Long id);
 }

@@ -61,11 +61,16 @@ public class FacilityController {
         return "facilities";
     }
 
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String getFacilityForm(ModelMap model) {
-        List<Layer> layers=new ArrayList<>();
-        model.addAttribute("facility", new Facility());
-        model.addAttribute("layer", layers);
+    public String getFacilityForm(ModelMap model, Principal principal) {
+        Facility facility = new Facility();
+        List<Layer> layers = new ArrayList<>();
+        model.addAttribute("facility", facility);
+        model.addAttribute("layer", new Layer());
+       /* model.addAttribute("layers",layers);*/
+       /* model.addAttribute("facilityId",facilityRepository.findFirstOrderByIdDesc().getId());*/
+//        model.addAttribute("materials", materialRepository.customFindByUser(userRepository.findByEmail(principal.getName())));
         return "facilityFormAddPlain";
     }
 
@@ -75,7 +80,6 @@ public class FacilityController {
             return "facilities";
         }
         facility.setUser(userRepository.findByEmail(principal.getName()));
-
         facilityRepository.save(facility);
         return ("redirect:/facilities/all");
     }
@@ -90,7 +94,7 @@ public class FacilityController {
     public String editFacility(Model model, @PathVariable long id) throws Exception {
         Facility facility = facilityRepository.findById(id).orElseThrow(Exception::new);
         model.addAttribute("facility", facility);
-        return "facilityFormEditPlain";
+        return "facilityFormEditPlainCopy";
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
@@ -103,9 +107,14 @@ public class FacilityController {
         return "redirect:/facilities/all";
     }
 
-    @ModelAttribute("material")
+    @ModelAttribute("materials")
     public List<Material> materialList(Principal principal) {
-       return materialRepository.customFindByUser(userRepository.findByEmail(principal.getName()));
+        return materialRepository.customFindByUser(userRepository.findByEmail(principal.getName()));
     }
-    /*return materialRepository.customFindByUser(userRepository.findByEmail(principal.getName()));*/
+    @GetMapping("/test")
+    public String test(Model model) {
+        List<String> test = new ArrayList<>();
+        model.addAttribute("test",test);
+        return "test";
+    }
 }

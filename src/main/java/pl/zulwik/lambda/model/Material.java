@@ -1,9 +1,7 @@
 package pl.zulwik.lambda.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotBlank;
-import java.security.PrivateKey;
+
 
 @Entity
 public class Material {

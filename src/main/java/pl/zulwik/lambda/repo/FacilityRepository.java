@@ -8,7 +8,10 @@ import pl.zulwik.lambda.model.User;
 
 import java.util.List;
 
-public interface FacilityRepository extends JpaRepository<Facility,Long> {
-   @Query("SELECT f FROM Facility f where f.user= ?1")
-   List<Facility> customFindByUser(User user);
-   }
+public interface FacilityRepository extends JpaRepository<Facility, Long> {
+    @Query("SELECT f FROM Facility f where f.user= ?1")
+    List<Facility> customFindByUser(User user);
+
+    /*Facility findFirstOrderByIdDesc();*/
+}
+

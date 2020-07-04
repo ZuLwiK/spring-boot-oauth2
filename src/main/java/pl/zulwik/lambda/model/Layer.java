@@ -19,17 +19,6 @@ public class Layer {
     @JoinColumn(name = "FACILITY_ID")
     private Facility facility;
 
-    @Column(name = "MATERIAL_NAME")
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = material.getName();
-    }
-
     public Long getId() {
         return id;
     }

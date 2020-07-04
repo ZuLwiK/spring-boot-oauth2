@@ -2,6 +2,7 @@ package pl.zulwik.lambda.controller;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -126,6 +127,8 @@ public class PagesController {
         return user.toString();*/
         return userRepository.findByEmail(principal.getName()).toString();
     }
+
+
 
 
 }

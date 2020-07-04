@@ -57,11 +57,11 @@ public class User implements Serializable {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private List<Material>materialsList = new ArrayList<>();
+	private List<Material>materials = new ArrayList<>();
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private List<Facility> facilityList = new ArrayList<>();
+	private List<Facility> facilities = new ArrayList<>();
 
 	@Override
 	public String toString() {
@@ -76,7 +76,7 @@ public class User implements Serializable {
 				", password='" + password + '\'' +
 				", provider='" + provider + '\'' +
 				", roles=" + roles +
-				", materialsList=" + materialsList +
+				", materials=" + materials +
 				'}';
 	}
 
@@ -84,20 +84,20 @@ public class User implements Serializable {
 		this.enabled = false;
 	}
 
-	public List<Material> getMaterialsList() {
-		return materialsList;
+	public List<Material> getMaterials() {
+		return materials;
 	}
 
-	public void setMaterialsList(List<Material> materialsList) {
-		this.materialsList = materialsList;
+	public void setMaterials(List<Material> materials) {
+		this.materials = materials;
 	}
 
-	public List<Facility> getFacilityList() {
-		return facilityList;
+	public List<Facility> getFacilities() {
+		return facilities;
 	}
 
-	public void setFacilityList(List<Facility> facilityList) {
-		this.facilityList = facilityList;
+	public void setFacilities(List<Facility> facilities) {
+		this.facilities = facilities;
 	}
 
 	public Long getId() {
